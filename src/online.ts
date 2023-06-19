@@ -271,7 +271,6 @@ export class RazerOnlineSDK implements RazerOnlineSDKInstance {
           break;
         case SETTLEMENT_IDENTIFIER.D:
         case SETTLEMENT_IDENTIFIER.R:
-          if(curr.RecordIdentifier == SETTLEMENT_IDENTIFIER.R) console.log(curr)
           pv[pv.length - 1].record.push(curr)
           break;
         default:

@@ -11,7 +11,7 @@ import {
   PerformScanPayRes,
   ReversalReq,
   ReversalRes,
-} from '../models/offline.inteface';
+} from '../models/offline.interface';
 
 interface RazerOfflineSDKInstance {
   scanPay: (T: PerformScanPayReq) => Promise<PerformScanPayRes>

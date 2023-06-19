@@ -3,7 +3,7 @@ import { RazerOnlineSDK } from "./src/online";
 
 const onlineInstance = ((config: RMSOnline.Config) => new RazerOnlineSDK(config));
 
-import * as RMSOffline from './models/offline.inteface'
+import * as RMSOffline from './models/offline.interface'
 import { RazerOfflineSDK } from "./src/offline";
 
 const offlineInstance = ((config: RMSOffline.Config) => new RazerOfflineSDK(config));

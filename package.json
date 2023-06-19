@@ -10,7 +10,7 @@
     "watch": "concurrently \"tsc --watch\" \"nodemon dist/index.js\""
   },
   "directories": {
-    "types": "dist/types/index.d.ts",
+    "types": "dist/index.d.ts",
     "doc": "doc",
     "example": "example"
   },

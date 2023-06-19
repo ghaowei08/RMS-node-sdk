@@ -1,4 +1,4 @@
-const razerSDK = require('../dist/index')
+const razerSDK = require('../npm/dist/index')
 
 // Online SDK
 const razerOnlineSdk = razerSDK.onlineInstance({ merchantId: '', verifyKey: '', secretKey: '', callbackUrl: '' })

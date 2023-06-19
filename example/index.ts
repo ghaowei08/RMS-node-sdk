@@ -1,4 +1,4 @@
-import { offlineInstance, onlineInstance } from '../dist/index'
+import { offlineInstance, onlineInstance } from '../npm/dist'
 
 // Online SDK
 const razerOnlineSdk = onlineInstance({ merchantId: '', verifyKey: '', secretKey: '', callbackUrl: '' })

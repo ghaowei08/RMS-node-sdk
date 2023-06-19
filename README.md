@@ -8,9 +8,9 @@ By integrating a payment gateway SDK like Razer Merchant Services, merchants can
 ### Installation
 ```bash
 # using npm
-npm i @ghaowei08@RMS-sdk
+npm i rms-sdk
 # using yarn
-yarn add @ghaowei08@RMS-sdk
+yarn add rms-sdk
 ```
 
 ### Prerequisites
