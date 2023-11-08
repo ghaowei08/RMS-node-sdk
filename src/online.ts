@@ -161,7 +161,7 @@ export class RazerOnlineSDK implements RazerOnlineSDKInstance {
         '48x48': gateway.logo_url_48x48,
         '120x43': gateway.logo_url_120x43,
       },
-      channel: gateway.channel_map.seamless.request,
+      channel: gateway.channel_map?.seamless?.request,
       type: this.toChannelType(gateway.channel_type)
     }));
   }
