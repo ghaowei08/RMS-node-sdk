@@ -147,7 +147,6 @@ export class RazerOnlineSDK implements RazerOnlineSDKInstance {
         }),
       })
     )
-    console.log(JSON.stringify(response.data.result))
     if (!response.data?.status) throw response.data
     return response.data.result.map((gateway: any): ChannelRes => ({
       title: gateway.title,
