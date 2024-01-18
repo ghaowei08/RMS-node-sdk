@@ -62,8 +62,11 @@ export interface PaymentTransactionRes {
   StatName: string;
   BillingName: string;
   ServiceItem: string;
+  BIN?: string
+  Currency?: string
   BillingEmail: string;
   TransactionRate: string;
+  BillingInfo?: string,
   TransactionCost: string;
   TransactionFee?: string;
   BillingMobileNumber: string;
@@ -78,6 +81,19 @@ export interface PaymentTransactionRes {
   CaptureRefID?: string;
   TerminalID: string;
   RefundRefID?: string;
+  PayTransactionID?: string;
+  BuyerName?: string;
+  MerchantID?: string;
+  ResponseCode?: string;
+  Bin4?: string
+  ECIValue?: string
+  CAVV?: string
+  XID?: string
+  AcquirerName?: string
+  BankMID?: string
+  CardScheme?: string
+  CardType?: string
+  CardCountry?: string
 }
 
 interface ChannelLogo {
