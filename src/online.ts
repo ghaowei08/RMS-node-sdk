@@ -183,7 +183,7 @@ export class RazerOnlineSDK implements RazerOnlineSDKInstance {
 			url: `/API/PSQ/psq-daily.php?merchantID=${this.merchantId
 				}&skey=${this.toHashKey(
 					key,
-				)}&rdate=${toDate}&version=4.0&response_type=json&additional_fields=CardScheme,CardType,CardCountry,TransactionRate,TransactionFee`,
+				)}&rdate=${toDate}&version=4.0&response_type=json&additional_fields=CardScheme,CardType,CardCountry,TransactionRate,TransactionFee,NetAmount,PaidDate,RefundRefID`,
 			method: 'GET',
 		});
 		return response.data;
