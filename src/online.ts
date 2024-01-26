@@ -257,16 +257,25 @@ export class RazerOnlineSDK implements RazerOnlineSDKInstance {
 		return res.data;
 	}
 
-	async getSettlements({ date }: SettlementReq): Promise<SettlementRes[]> {
+	async getSettlements({ date }: SettlementReq, version: "3.0" | "4.0" = "4.0"): Promise<SettlementRes[]> {
 		const formatDate = moment(date).format('YYYY-MM-DD');
-		const key = `${this.merchantId}${this.secretKey}${formatDate}`;
+		let key = '';
+		switch (version) {
+			case '3.0':
+				key = `${this.merchantId}${this.secretKey}${formatDate}`
+				break;
+			case '4.0':
+				key = `${this.merchantId}${this.verifyKey}${formatDate}`
+				break;
+		}
 		const res = await this.apiInstance({
-			url: `/API/settlement/report.php?merchant_id=${this.merchantId}&token=${this.toHashKey(key)}&date=${formatDate}&format=json&version=3.0`,
+			url: `/API/settlement/report.php?merchant_id=${this.merchantId}&token=${this.toHashKey(key)}&date=${formatDate}&format=json&version=${version}`,
 			method: 'GET',
 		});
 		if (res.data?.succuess == false) throw res.data;
 		if (res.data?.error_code) throw res.data;
-		return res.data?.reduce((pv: SettlementRes[], curr: SettlementSummary | SettlementRecord) => {
+		const result = Array.isArray(res.data) ? res.data : Object.values(res.data)
+		return result?.reduce((pv: SettlementRes[], curr: SettlementSummary | SettlementRecord) => {
 			switch (curr.RecordIdentifier) {
 				case SETTLEMENT_IDENTIFIER.H:
 					pv.push({
