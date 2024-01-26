@@ -1,3 +1,5 @@
+### v0.0.6
+- Fix: settlement response data will switch between *Array* or *Object*
 ### v0.0.5
 - update transaction API version to 4.0 to received card type
 #### v0.0.5-beta.1
